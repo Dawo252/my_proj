@@ -5,3 +5,10 @@
 .div_hover:hover {
   background-color: #25b8a2;
 }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div>
-        Thread theme
-    </div>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css.css') }}">
     <div style="padding-bottom: 10px">
-    <div class="has-text-centered" > Threads </div>
+    <div class="has-text-centered title" > Threads </div>
     {% for each in threads %}
+        <div class="row">
     <a href="http://127.0.0.1:5000/forum/{{ each.id }}">
-        <div style="color: aqua; border: 5px solid #00d1b2; background-color: #25b8a2;" class="has-text-centered">
+        <div style="color: aqua; border: 5px solid #00d1b2; flex-grow: 5;" class="has-text-centered div_hover col-8">
             <p style="padding-bottom: 5px">{{ each.subject }}</p>
         </div>
     </a>
-    {% if current_user.id == each.user_id %}
+        <div class="col-4">
+            {% if current_user.id == each.user_id %}
         <form method="POST" action="\foo_threads">
                  <input type="hidden" name="thread_id" placeholder="your answer" value="{{ each.id }}" >
-            <input type="submit" value="delete">
+            <input type="submit" value="delete" class="button is-block is-danger">
         </form>
     {% endif %}
+        </div>
+        </div>
+        <div style="margin: 5px"></div>
     {% endfor %}
     <form method="POST">
             <div class="field">
