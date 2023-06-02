@@ -1,0 +1,7 @@
+.div_hover {
+  background-color: #00d1b2;
+}
+
+.div_hover:hover {
+  background-color: #25b8a2;
+}

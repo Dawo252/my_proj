@@ -1,9 +1,12 @@
-<!-- templates/profile.html -->
-
 {% extends "base.html" %}
-
 {% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css.css') }}">
 <h1 class="title">
   Welcome, {{ name }}!
 </h1>
+    <a href="/profile/change_profile">
+        <div class="div_hover container has-text-centered" style="padding:10px">
+            <p style="padding-bottom: 5px">Change your profile</p>
+        </div>
+    </a>
 {% endblock %}

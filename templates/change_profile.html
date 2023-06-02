@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="title has-text-centered">{{ current_user.username }}</h1>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+        <p>change username</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="username" placeholder="username" autofocus="">
+                </div>
+            </div>
+        <p>change password</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+        <p>change email</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="email" placeholder="email" autofocus="">
+                </div>
+            </div>
+        <p>change age</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="age" placeholder="age" autofocus="">
+                </div>
+            </div>
+        <p>change bio</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="bio" placeholder="bio" autofocus="">
+                </div>
+            </div>
+        <p>change photo</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="file" name="photo" placeholder="photo" autofocus="">
+                </div>
+            </div>
+        <button class="button is-block is-info">Post</button>
+    </form>
+    </div>
+{% endblock %}

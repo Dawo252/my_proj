@@ -1,12 +1,13 @@
-<!-- templates/index.html -->
-
 {% extends "base.html" %}
 
 {% block content %}
 <h1 class="title">
-  Flask Login Example
+<video width="80%" height="80%" controls class="container">
+    <source src="{{ url_for('static',filename='videos/mord.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 </h1>
 <h2 class="subtitle">
-  Easy authentication and authorization in Flask.
+
 </h2>
 {% endblock %}

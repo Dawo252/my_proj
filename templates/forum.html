@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        Thread theme
+    </div>
+    <div style="padding-bottom: 10px">
+    <div class="has-text-centered" > Threads </div>
+    {% for each in threads %}
+    <a href="http://127.0.0.1:5000/forum/{{ each.id }}">
+        <div style="color: aqua; border: 5px solid #00d1b2; background-color: #25b8a2;" class="has-text-centered">
+            <p style="padding-bottom: 5px">{{ each.subject }}</p>
+        </div>
+    </a>
+    {% if current_user.id == each.user_id %}
+        <form method="POST" action="\foo_threads">
+                 <input type="hidden" name="thread_id" placeholder="your answer" value="{{ each.id }}" >
+            <input type="submit" value="delete">
+        </form>
+    {% endif %}
+    {% endfor %}
+    <form method="POST">
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="thread_subject" placeholder="your thread" autofocus="">
+                </div>
+            </div>
+            <button class="button is-block is-info">Post</button>
+    </form>
+    </div>
+{% endblock %}
